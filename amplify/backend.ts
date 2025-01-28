@@ -6,3 +6,9 @@ defineBackend({
   auth,
   data,
 });
+
+const { cfnUserPool } = backend.auth.resources.cfnResources;
+
+cfnUserPool.adminCreateUserConfig = {
+  allowAdminCreateUserOnly: true,
+}
